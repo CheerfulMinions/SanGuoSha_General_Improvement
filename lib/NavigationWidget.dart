@@ -22,22 +22,19 @@ class _NavigationWidgetState extends State<NavigationWidget> {
     return Scaffold(
       body: list[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-          // 数组里面有很多Widget
+          fixedColor: Colors.grey,
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.people),
               label: '武将列表',
-              backgroundColor: Colors.red,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.add),
               label: '新增改动',
-              backgroundColor: Colors.blue,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.school),
-              label: '技巧',
-              backgroundColor: Colors.green,
+              label: '必备知识',
             ),
           ],
           selectedLabelStyle: TextStyle(fontSize: 20),
@@ -49,7 +46,7 @@ class _NavigationWidgetState extends State<NavigationWidget> {
             });
           },
           // 四个以下默认fixed , 即无法改变BottomNavigationBar的样式
-          type: BottomNavigationBarType.shifting),
+          type: BottomNavigationBarType.fixed),
     );
   }
 }

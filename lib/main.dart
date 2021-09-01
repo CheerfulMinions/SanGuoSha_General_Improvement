@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "武将增强",
-      theme: ThemeData.light(),
+      theme: ThemeData.dark(),
       home: LaunchScreen(),
       debugShowCheckedModeBanner: false,
     );

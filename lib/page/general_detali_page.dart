@@ -1,4 +1,4 @@
-import 'package:example1/general_detail.dart';
+import 'General.dart';
 import 'package:flutter/material.dart';
 
 final _textStyle = TextStyle(
@@ -32,14 +32,27 @@ class GeneralDetailPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            child: Text(
-              soleItem.skillDetail,
-              style: _textStyle,
+            //技能描述板块
+            child: Column(
+              children: soleItem.skillName
+                  .asMap()
+                  .keys
+                  .map((index) => Column(
+                        children: [
+                          Text(
+                            soleItem.skillName[index].toString(),
+                            style: _textStyle,
+                          ),
+                          Text(
+                            soleItem.skillDescription[index],
+                            style: _textStyle,
+                          ),
+                          Text('\n')
+                        ],
+                      ))
+                  .toList(),
             ),
             width: MediaQuery.of(context).size.width,
-            // height: MediaQuery.of(context).size.height ,
-            // height: 600,
-            // color: Colors.blue,
           ),
         ],
       ),
